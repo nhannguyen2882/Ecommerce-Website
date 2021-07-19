@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>EcomWeb.Bussiness</id>
+    <version>1.0.0</version>
+    <authors>EcomWeb.Bussiness</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="EcomWeb.DataAccessor" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection.Abstractions" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Bussiness\bin\Debug\net5.0\EcomWeb.Bussiness.dll" target="lib\net5.0\EcomWeb.Bussiness.dll" />
+  </files>
+</package>

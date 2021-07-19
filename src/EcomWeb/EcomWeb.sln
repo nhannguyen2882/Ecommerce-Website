@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomWeb.Website", "EcomWeb\EcomWeb.Website.csproj", "{62B463BC-2E60-4719-88FC-7729D807BA7E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomWeb.DataAccessor", "EcomWeb.DataAccessor\EcomWeb.DataAccessor.csproj", "{7F9E9F8A-C5BD-489E-A809-06273E742D95}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomWeb.Bussiness", "EcomWeb.Bussiness\EcomWeb.Bussiness.csproj", "{681CA95E-1FAC-471A-88EE-E528AFDFBD8A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{242DCEA1-1167-4DA3-9B89-299EF9523B63} = {242DCEA1-1167-4DA3-9B89-299EF9523B63}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomWeb.Website", "EcomWeb.Website\EcomWeb.Website.csproj", "{AD9A99E5-CBF8-4530-AA6C-3390E0552C48}"
+	ProjectSection(ProjectDependencies) = postProject
+		{242DCEA1-1167-4DA3-9B89-299EF9523B63} = {242DCEA1-1167-4DA3-9B89-299EF9523B63}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomWeb.Contracts", "EcomWeb.Contracts\EcomWeb.Contracts.csproj", "{242DCEA1-1167-4DA3-9B89-299EF9523B63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{62B463BC-2E60-4719-88FC-7729D807BA7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62B463BC-2E60-4719-88FC-7729D807BA7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62B463BC-2E60-4719-88FC-7729D807BA7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62B463BC-2E60-4719-88FC-7729D807BA7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7F9E9F8A-C5BD-489E-A809-06273E742D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7F9E9F8A-C5BD-489E-A809-06273E742D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F9E9F8A-C5BD-489E-A809-06273E742D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +31,14 @@ Global
 		{681CA95E-1FAC-471A-88EE-E528AFDFBD8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{681CA95E-1FAC-471A-88EE-E528AFDFBD8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{681CA95E-1FAC-471A-88EE-E528AFDFBD8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9A99E5-CBF8-4530-AA6C-3390E0552C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9A99E5-CBF8-4530-AA6C-3390E0552C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9A99E5-CBF8-4530-AA6C-3390E0552C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9A99E5-CBF8-4530-AA6C-3390E0552C48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{242DCEA1-1167-4DA3-9B89-299EF9523B63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{242DCEA1-1167-4DA3-9B89-299EF9523B63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{242DCEA1-1167-4DA3-9B89-299EF9523B63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{242DCEA1-1167-4DA3-9B89-299EF9523B63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
