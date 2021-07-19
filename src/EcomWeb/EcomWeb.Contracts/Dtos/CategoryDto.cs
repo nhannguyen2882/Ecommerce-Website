@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EcomWeb.Contracts.Dtos
 {
-    class CategoryDto
+    public class CategoryDto
     {
         public Guid? ID { get; set; }        
         public string Name { get; set; }

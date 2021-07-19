@@ -1,0 +1,12 @@
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\bin\Debug\net5.0\EcomWeb.Contracts.deps.json
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\bin\Debug\net5.0\EcomWeb.Contracts.dll
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\bin\Debug\net5.0\ref\EcomWeb.Contracts.dll
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\bin\Debug\net5.0\EcomWeb.Contracts.pdb
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\obj\Debug\net5.0\EcomWeb.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\obj\Debug\net5.0\EcomWeb.Contracts.AssemblyInfoInputs.cache
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\obj\Debug\net5.0\EcomWeb.Contracts.AssemblyInfo.cs
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\obj\Debug\net5.0\EcomWeb.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\obj\Debug\net5.0\EcomWeb.Contracts.dll
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\obj\Debug\net5.0\ref\EcomWeb.Contracts.dll
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\obj\Debug\net5.0\EcomWeb.Contracts.pdb
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.Contracts\obj\Debug\net5.0\EcomWeb.Contracts.csproj.AssemblyReference.cache

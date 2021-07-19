@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="C:\Users\Nhàn Nguyễn\.nuget\packages\microsoft.net.compilers\1.0.0\build\..\tools\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Ensure.That" Version="10.1.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
 
@@ -14,10 +20,6 @@
   <ItemGroup>
     <ProjectReference Include="..\EcomWeb.Contracts\EcomWeb.Contracts.csproj" />
     <ProjectReference Include="..\EcomWeb.DataAccessor\EcomWeb.DataAccessor.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

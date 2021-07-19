@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomWeb.Website", "EcomWeb.
 		{242DCEA1-1167-4DA3-9B89-299EF9523B63} = {242DCEA1-1167-4DA3-9B89-299EF9523B63}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcomWeb.Contracts", "EcomWeb.Contracts\EcomWeb.Contracts.csproj", "{242DCEA1-1167-4DA3-9B89-299EF9523B63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcomWeb.Contracts", "EcomWeb.Contracts\EcomWeb.Contracts.csproj", "{242DCEA1-1167-4DA3-9B89-299EF9523B63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

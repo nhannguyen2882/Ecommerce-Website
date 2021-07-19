@@ -1,6 +1,10 @@
-﻿using EcomWeb.DataAccessor;
+﻿using EcomWeb.Business.Interfaces;
+using EcomWeb.Bussiness.Interface;
+using EcomWeb.Bussiness.Services;
+using EcomWeb.DataAccessor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace EcomWeb.Bussiness
 {
@@ -9,9 +13,9 @@ namespace EcomWeb.Bussiness
         public static void AddBussinessLayer(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDataAccessorLayer(configuration);
-            //services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            //services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-            //services.AddTransient<ICategoryService, CategoryService>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            services.AddTransient<ICategoryService, CategoryService>();
         }
     }
 }
