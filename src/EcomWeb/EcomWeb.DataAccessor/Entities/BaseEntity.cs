@@ -12,8 +12,8 @@ namespace EcomWeb.DataAccessor.Entities
 
         public DateTime UpdatedDate { get; set; }
 
-        //public Guid? CreatorId { get; set; }
+        public Guid? CreatorId { get; set; }
 
-        public bool Pubished { get; set; }
+        public bool Published { get; set; }
     }
 }

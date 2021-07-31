@@ -1,5 +1,8 @@
-﻿using EcomWeb.Business.Interfaces;
-using EcomWeb.Bussiness.Interface;
+﻿
+using EcomWeb.Bussiness.Interfaces;
+using EcomWeb.Bussiness.Interfaces.Repository;
+using EcomWeb.Bussiness.Interfaces.Service;
+using EcomWeb.Bussiness.Repos;
 using EcomWeb.Bussiness.Services;
 using EcomWeb.DataAccessor;
 using Microsoft.Extensions.Configuration;
@@ -14,8 +17,12 @@ namespace EcomWeb.Bussiness
         {
             services.AddDataAccessorLayer(configuration);
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
+            services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepo<>));
+            services.AddTransient(typeof(IProductRepo<>), typeof(ProductRepo<>));
+
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IProductService, ProductService>();
         }
     }
 }

@@ -4,6 +4,7 @@ C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\E
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\bin\Debug\net5.0\EcomWeb.DataAccessor.dll
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\bin\Debug\net5.0\ref\EcomWeb.DataAccessor.dll
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\bin\Debug\net5.0\EcomWeb.DataAccessor.pdb
+C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\obj\Debug\net5.0\EcomWeb.DataAccessor.csproj.AssemblyReference.cache
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\obj\Debug\net5.0\EcomWeb.DataAccessor.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\obj\Debug\net5.0\EcomWeb.DataAccessor.AssemblyInfoInputs.cache
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\obj\Debug\net5.0\EcomWeb.DataAccessor.AssemblyInfo.cs
@@ -12,4 +13,3 @@ C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\E
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\obj\Debug\net5.0\ref\EcomWeb.DataAccessor.dll
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\obj\Debug\net5.0\EcomWeb.DataAccessor.pdb
 C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\obj\Debug\net5.0\EcomWeb.DataAccessor.genruntimeconfig.cache
-C:\Users\Nhàn Nguyễn\source\repos\MyWebsite\Ecommerce-Website\src\EcomWeb\EcomWeb.DataAccessor\obj\Debug\net5.0\EcomWeb.DataAccessor.csproj.AssemblyReference.cache

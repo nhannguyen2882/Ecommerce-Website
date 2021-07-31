@@ -28,13 +28,20 @@ namespace EcomWeb.DataAccessor.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Desc")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("Pubished")
+                    b.Property<bool>("Published")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -45,23 +52,66 @@ namespace EcomWeb.DataAccessor.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Image", b =>
+            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Feedback", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ProductId")
+                    b.Property<string>("Comment")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatorId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid?>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Published")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Star")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Images");
+                    b.ToTable("Feedbacks");
+                });
+
+            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Order", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Published")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid?>("ShoppingCartID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Product", b =>
@@ -71,27 +121,36 @@ namespace EcomWeb.DataAccessor.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("CategoryId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal?>("Cost")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Desc")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal?>("Price")
+                        .IsRequired()
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<bool>("Pubished")
+                    b.Property<bool>("Published")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -104,20 +163,78 @@ namespace EcomWeb.DataAccessor.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Image", b =>
+            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.ShoppingCartItem", b =>
                 {
-                    b.HasOne("EcomWeb.DataAccessor.Entities.Product", null)
-                        .WithMany("Images")
-                        .HasForeignKey("ProductId");
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid?>("ProductID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Published")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("ShoppingCartItems");
+                });
+
+            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Feedback", b =>
+                {
+                    b.HasOne("EcomWeb.DataAccessor.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Product", b =>
                 {
                     b.HasOne("EcomWeb.DataAccessor.Entities.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.ShoppingCartItem", b =>
+                {
+                    b.HasOne("EcomWeb.DataAccessor.Entities.Order", null)
+                        .WithMany("Items")
+                        .HasForeignKey("OrderId");
+
+                    b.HasOne("EcomWeb.DataAccessor.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Category", b =>
@@ -125,9 +242,9 @@ namespace EcomWeb.DataAccessor.Migrations
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Product", b =>
+            modelBuilder.Entity("EcomWeb.DataAccessor.Entities.Order", b =>
                 {
-                    b.Navigation("Images");
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

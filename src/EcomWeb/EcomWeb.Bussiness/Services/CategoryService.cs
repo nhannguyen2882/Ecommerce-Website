@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using EcomWeb.Business.Interfaces;
-using EcomWeb.Bussiness.Interface;
+using EcomWeb.Bussiness.Interfaces.Repository;
+using EcomWeb.Bussiness.Interfaces.Service;
 using EcomWeb.Contracts.Dtos;
 using EcomWeb.DataAccessor.Entities;
 using EnsureThat;
@@ -24,14 +24,16 @@ namespace EcomWeb.Bussiness.Services
         public async Task<CategoryDto> AddAsync(CategoryDto categoryDto)
         {
             Ensure.Any.IsNotNull(categoryDto, nameof(categoryDto));
+           
             var category = _mapper.Map<Category>(categoryDto);
+            
             var item = await _baseRepository.AddAsync(category);
             return _mapper.Map<CategoryDto>(item);
         }
 
         public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            await _baseRepository.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<CategoryDto>> GetAllAsync()
@@ -48,7 +50,11 @@ namespace EcomWeb.Bussiness.Services
 
         public async Task UpdateAsync(CategoryDto categoryDto)
         {
-            throw new NotImplementedException();
+            Ensure.Any.IsNotNull(categoryDto, nameof(categoryDto));
+
+            var category = _mapper.Map<Category>(categoryDto);
+
+            await _baseRepository.UpdateAsync(category);
         }
     }
 }

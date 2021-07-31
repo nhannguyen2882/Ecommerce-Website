@@ -22,10 +22,12 @@ namespace EcomWeb.DataAccessor.Entities
 
         public bool IsFeatured { get; set; }
 
+        [Required]
         public Guid? CategoryId { get; set; }
 
+        [Required]
         public Category Category { get; set; }
 
-        public ICollection<Image> Images { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

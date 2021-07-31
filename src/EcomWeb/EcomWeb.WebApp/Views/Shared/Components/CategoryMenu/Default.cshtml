@@ -1,0 +1,8 @@
+﻿@model IEnumerable<EcomWeb.Contracts.Dtos.CategoryDto>
+<h4>Category</h4>
+<ul>
+    @foreach (var category in Model)
+    {
+        <a asp-action ="Details" asp-controller="Category" asp-route-id="@category.Id">@category.Name</a>
+    }
+</ul>

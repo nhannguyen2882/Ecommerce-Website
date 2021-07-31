@@ -19,7 +19,8 @@ namespace Rookie.Ecom.Business
 
         private void FromDataAccessorLayer()
         {
-            CreateMap<Category, CategoryDto>();
+            CreateMap<Category, CategoryDto>().ReverseMap(); ;
+            CreateMap<Product, ProductDto>().ReverseMap(); ;
         }
     }
 }
