@@ -76,6 +76,10 @@ const Products=({classes,...props})=>{
           accessor: "price",
         },
         {
+            Header: "Featured?",
+            accessor: "isFeature",
+        },
+        {
             Header: "Date Create",
             accessor: "createdDate",
           },
@@ -111,7 +115,7 @@ const Products=({classes,...props})=>{
                 />
                 </Grid>
                 <Grid item xs={12} className = {classes.borderForm}>
-                    <h2 className = {classes.subTitle1}>Add/Edit Product</h2>
+                    <h2 className = {classes.subTitle1}>{catId==null?"Select Category to Add Product":"Add/Edit Product"}</h2>
                     <ProductForm {...({currentId,setCurrentId,dataList,catId})}/>
                     
                 </Grid>

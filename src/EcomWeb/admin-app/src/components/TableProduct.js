@@ -55,6 +55,9 @@ const TableProduct = ({columns, data,onDelete, page, rowsPerPage, setCurrentId})
                               <TableCell>{record.original.name}</TableCell>
                               <TableCell>{record.original.desc}</TableCell>
                               <TableCell>{record.original.price}</TableCell>
+                              <TableCell>
+                                  <Checkbox checked = {record.original.isFeatured}></Checkbox>
+                              </TableCell>
                               <TableCell>{Moment(record.original.createdDate).format('D/MM/yy')}</TableCell>
                               <TableCell>{Moment(record.original.updatedDate).format('D/MM/yy')}</TableCell>
                               <TableCell>

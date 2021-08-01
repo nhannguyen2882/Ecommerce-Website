@@ -1,0 +1,9 @@
+﻿ul {
+    padding-left: 2rem;
+    list-style-type: none;
+    /* set to 0 if your not using a list-style-type */
+}
+    ul a.category {
+        font-size: 1.5rem;
+        margin: 30px
+    }

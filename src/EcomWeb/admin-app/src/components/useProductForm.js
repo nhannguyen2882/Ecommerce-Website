@@ -6,12 +6,14 @@ const useForm = (initialValues,validate,setCurrentId)=>{
     const [checked, setChecked] = React.useState(true);
 
     const handleInputChange = e =>{
-        console.log(e.target)
+        
         const {name,value}= e.target
         const fieldValue = { [name]: value }
 
-        fieldValue["published"] = e.target.checked
-
+        if('published' in fieldValue)
+            fieldValue["published"] = e.target.checked
+        else
+            fieldValue["isFeatured"] = e.target.checked
         setChecked(e.target.checked);
         
         setValues({

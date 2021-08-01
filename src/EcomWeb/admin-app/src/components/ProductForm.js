@@ -23,15 +23,15 @@ const styles =theme=>({
 
     },
     widthTF1:{
-        width: 400,
+        width: 410,
         margin: theme.spacing(1)
     },
     widthTF2:{
-        width: 200,
+        width: 180,
         margin: theme.spacing(1)
     },
     widthTF3:{
-        width: 616,
+        width: 608,
         margin: theme.spacing(1)
     }
 
@@ -44,6 +44,7 @@ const ProductForm=({classes,...props})=>{
         name:'',
         desc:'',
         price:0,
+        isFeatured: false,
         categoryId:props.catId,
         createdDate: new Date(),
         updatedDate: new Date(),
@@ -51,16 +52,23 @@ const ProductForm=({classes,...props})=>{
     
     }
 
+    const [flagDisabled,setFlagDisabled] = useState(true)
 
     const { addToast } = useToasts()
     const validate = (fieldInputs = values) => {
         let temp = {...errors}
-        if('name' in fieldInputs)
+        if('name' in fieldInputs){
             temp.nameProduct =  fieldInputs["name"]? "" : "This field is required."
-        if('price' in fieldInputs)
+            temp.nameProduct = /^.{0,50}$/.test(fieldInputs["name"]) ? temp.nameProduct: "Max length is 50 characters"
+        }
+        if('price' in fieldInputs){
             temp.price = /^[0-9]+$|^[0-9]+\.[0-9]+$|^[0-9]+\.$/.test(fieldInputs.price) ?"":"Input number or decimal number."
-        if('desc' in fieldInputs)
+        
+        }
+        if('desc' in fieldInputs){
             temp.desc = fieldInputs.desc ? "" : "This field is required."
+            temp.desc = /^.{0,50}$/.test(fieldInputs.desc) ? temp.desc: "Max length is 50 characters"
+        }
         setErrors({
             ...temp
         })
@@ -68,6 +76,7 @@ const ProductForm=({classes,...props})=>{
             return Object.values(temp).every(x=>x=="")
     } 
     
+
     const{values,setValues,handleInputChange,errors,setErrors,resetForm}=useForm(initProductValue,validate, props.setCurrentId)
 
     const typeSubmit = props.currentId == null ? "Add": "Edit"
@@ -83,7 +92,7 @@ const ProductForm=({classes,...props})=>{
     }
 
     const handleSubmit = e =>{
-        console.log(props.catId)
+        values.categoryId = props.catId
         const onSuccess = () => {
             resetForm()
             addToast(typeSubmit + " Product successfully", { appearance: 'success' })
@@ -106,8 +115,14 @@ const ProductForm=({classes,...props})=>{
         }
     },[props.currentId])
 
+    useEffect(()=>{
+        if(props.catId != null)
+            setFlagDisabled(false)
+    },[props.catId])
+    console.log(values)
     return (
-        <form aria-disabled autoComplete="off" className = {classes.root} onSubmit={handleSubmit}>
+        <form autoComplete="off" className = {classes.root} onSubmit={handleSubmit}>
+            <fieldset disabled = {flagDisabled}>
             <Grid container>
                 <Grid item xs={7}>
                     <TextField
@@ -157,6 +172,15 @@ const ProductForm=({classes,...props})=>{
                     <FormControlLabel
                         control={
                         <Checkbox 
+                            name ="isFeatured" 
+                            checked={values.isFeatured}
+                            onChange={handleInputChange}
+                            />}
+                        label="Is Featured?"
+                    />
+                    <FormControlLabel
+                        control={
+                        <Checkbox 
                             name ="published" 
                             checked={values.published}
                             onChange={handleInputChange}
@@ -185,6 +209,7 @@ const ProductForm=({classes,...props})=>{
                     </div>
                 </Grid>
             </Grid>
+            </fieldset>
         </form>
     );
 }

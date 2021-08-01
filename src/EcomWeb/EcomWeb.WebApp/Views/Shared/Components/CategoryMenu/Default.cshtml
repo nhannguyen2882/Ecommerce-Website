@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<EcomWeb.Contracts.Dtos.CategoryDto>
 <h4>Category</h4>
+<link rel="stylesheet" href="~/css/categoryMenu.css" />
 <ul>
     @foreach (var category in Model)
     {
-        <a asp-action ="Details" asp-controller="Category" asp-route-id="@category.Id">@category.Name</a>
+        <a class="category" asp-action ="Details" asp-controller="Category" asp-route-id="@category.Id">@category.Name</a>
     }
 </ul>

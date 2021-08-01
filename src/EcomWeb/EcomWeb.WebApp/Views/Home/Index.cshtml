@@ -2,27 +2,7 @@
 @{
     var productFeatured = ViewData["productFeatured"] as List<ProductDto>;
 }
-@using Microsoft.AspNetCore.Authentication
 
-<h2>Claims</h2>
-
-<dl>
-    @foreach (var claim in User.Claims)
-    {
-        <dt>@claim.Type</dt>
-        <dd>@claim.Value</dd>
-    }
-</dl>
-
-<h2>Properties</h2>
-
-<dl>
-    @foreach (var prop in (await Context.AuthenticateAsync()).Properties.Items)
-    {
-        <dt>@prop.Key</dt>
-        <dd>@prop.Value</dd>
-    }
-</dl>
 <div class="text-center">
     <h1 class="display-4">Do you love Milk Tea?</h1>
     <h4>Order now!</h4>

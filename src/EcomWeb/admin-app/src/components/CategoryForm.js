@@ -37,11 +37,11 @@ const CategoryForm=({classes,...props})=>{
         let temp = {...errors}
         if('name' in fieldInputs){
             temp.nameCategory = fieldInputs["name"] ?"":"This field is required."
-            console.log(temp.nameCategory)
+            temp.nameCategory = /^.{0,50}$/.test(fieldInputs["name"]) ? temp.nameCategory: "Max length is 50 characters"
         }
         if('desc' in fieldInputs){
             temp.desc = fieldInputs.desc ?"":"This field is required."
-            console.log(temp.desc)
+            temp.desc = /^.{0,50}$/.test(fieldInputs.desc)? temp.desc: "Max length is 50 characters"
         }
         setErrors({
             ...temp
